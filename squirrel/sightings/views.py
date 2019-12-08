@@ -22,12 +22,12 @@ def list(request):
 
 def add(request):
     if request.method == 'POST':
-        form = SightingForm(request.POST)
+        form = SightingsForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect(f'/sightings')
     else:
-        form = SightingForm()
+        form = SightingsForm()
 
     context = {
             'form': form,
@@ -35,17 +35,17 @@ def add(request):
 
     return render(request, 'sightings/add.html', context)
 
-def edit(request, sq_id):
+def edit(request, USID):
 
-    instance = get_object_or_404(Squirrel, Unique_Squirrel_ID=sq_id)
+    instance = get_object_or_404(Squirrel, USID=USID)
     form = SightingsForm(request.POST or None,instance=instance)
     if form.is_valid():
         form.save()
-        return redirect(f'/sightings/{sq_id}')
+        return redirect(f'/sightings/{USID}')
     
     context ={
         'form':form,
-        'sqid':sq_id,
+        'USID':USID,
     }
     return render(request, 'sightings/edit.html', context)
 
