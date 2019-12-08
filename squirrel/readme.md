@@ -13,28 +13,28 @@ The goal for this project is to build an application for keeping track of all th
 
 ## Functions this application:
 * 1
-  * displays the location of the squirrel sightings 
+  * Display the locations of the squirrel sightings 
     https://yf2510.appspot.com/map/
 
 * 2
-  * add squirrel sightings
+  * Add squirrel sightings
     https://yf2510.appspot.com/sightings/add/
 
 * 3
-  * edit squirrel sightings
+  * Edit squirrel sightings
     https://yf2510.appspot.com/sightings/
 
 * 4
-  * check general stats about the sightings
+  * Check general stats about the sightings
     https://yf2510.appspot.com/sightings/stats/
 
 * 5 
-  * import csv into app
+  * Import csv into APP
 ```sh
 python manage.py import_squirrel_data /path/to/file.csv
 ```
 * 6
-  * export csv into app
+  * Export csv into APP
 ```sh
 python manage.py export_squirrel_data /path/to/file.csv
 ```
