@@ -16,8 +16,8 @@
 	<h3>Squirrel IDs</h3>
 	    {% if squirrels %}
                 <ul>
-                    {% for squirrel in squirrels %}
-                    <li><a href="/sightings/{{squirrel.USID}}/">Squirrel IDs:{{squirrel.USID}}</a></li>
+                    {% for squirrel in sightings %}
+		    <li><a href="/sightings/{{squirrel.USID}}"class="btn btn-warning" USID='squirrel.USID'>{{squirrel.USID}}</a></li>
                     {%endfor%}
                 </ul>
             {% else %}

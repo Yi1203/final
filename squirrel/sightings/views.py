@@ -35,14 +35,14 @@ def add(request):
     return render(request, 'sightings/add.html', context)
 
 def edit(request, USID):
-    sighting = Squirrel.objects.get(pk=USID)
+    sightings = Squirrel.objects.get(pk=USID)
     if request.method == 'POST':
-        form = SightingsForm(request.POST, instance=sighting)
+        form = SightingsForm(request.POST, instance=sightings)
         if form.is_valid():
             form.save()
             return redirect(f'/sightings/')
     else:
-        form = SightingsForm(instance=sighting)
+        form = SightingsForm(instance=sightings)
 
     context = {
             'form': form,
