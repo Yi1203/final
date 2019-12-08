@@ -3,9 +3,10 @@ from django.http import HttpResponse
 from .forms import SightingsForm
 from django.db.models import Count
 from .models import Squirrel
-
+import random
 # Create your views here
 def map(request):
+
     sightings = Squirrel.objects.all()[:100]
     context = {'sightings': sightings,}
     return render(request, 'sightings/map.html',context)
@@ -37,7 +38,7 @@ def add(request):
 
 def edit(request, USID):
 
-    instance = get_object_or_404(Squirrel, USID=USID)
+    instance = get_object_or_404(Squirrel, pk=USID)
     form = SightingsForm(request.POST or None,instance=instance)
     if form.is_valid():
         form.save()

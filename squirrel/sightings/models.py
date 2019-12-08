@@ -5,7 +5,7 @@ from django.db import models
 class Squirrel(models.Model):
     X=models.FloatField(null=True)
     Y=models.FloatField(null=True)
-    USID=models.CharField(max_length=100,verbose_name='Unique Squirrel ID',null=True)
+    USID=models.CharField(max_length=100,verbose_name='Unique Squirrel ID',primary_key=True,default = None)
     Hectare=models.CharField(max_length=100,null=True)
     Shift=models.CharField(max_length=100,null=True)
     Date=models.DateField(null=True)
@@ -39,3 +39,5 @@ class Squirrel(models.Model):
     BB=models.IntegerField(verbose_name='Borough Boundaries',null=True)
     CCD=models.IntegerField(verbose_name='City Council Districts',null=True)
     PP=models.IntegerField(verbose_name='Police Precincts',null=True)
+    def __str__(self):
+         return self.USID
