@@ -39,5 +39,6 @@ class Squirrel(models.Model):
     BB=models.IntegerField(verbose_name='Borough Boundaries',null=True)
     CCD=models.IntegerField(verbose_name='City Council Districts',null=True)
     PP=models.IntegerField(verbose_name='Police Precincts',null=True)
+
     def __str__(self):
          return self.USID
