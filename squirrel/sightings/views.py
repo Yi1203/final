@@ -52,16 +52,16 @@ def edit(request, sq_id):
 def stats(request):
 
     total_sightings = Squirrel.objects.count()
-    adult = Squirrel.objects.filter(age='Adult').count()
-    juvenile = Squirrel.objects.filter(age='Juvenile').count()
-    gray = Squirrel.objects.filter(color='Gray').count()
-    cinnamon = Squirrel.objects.filter(color='Cinnamon').count()
-    black = Squirrel.objects.filter(color='Black').count()
-    running_true = Squirrel.objects.filter(running=True).count()
-    eating_true = Squirrel.objects.filter(eating=True).count()
-    chasing_true = Squirrel.objects.filter(chasing=True).count()
-    climbing_true = Squirrel.objects.filter(climbing=True).count()
-    foraging_true = Squirrel.objects.filter(foraging=True).count()
+    adult = Squirrel.objects.filter(Age='Adult').count()
+    juvenile = Squirrel.objects.filter(Age='Juvenile').count()
+    gray = Squirrel.objects.filter(PFC='Gray').count()
+    cinnamon = Squirrel.objects.filter(PFC='Cinnamon').count()
+    black = Squirrel.objects.filter(PFC='Black').count()
+    running_true = Squirrel.objects.filter(Running=True).count()
+    eating_true = Squirrel.objects.filter(Eating=True).count()
+    chasing_true = Squirrel.objects.filter(Chasing=True).count()
+    climbing_true = Squirrel.objects.filter(Climbing=True).count()
+    foraging_true = Squirrel.objects.filter(Foraging=True).count()
 
     context = {
             'total_sightings': total_sightings,

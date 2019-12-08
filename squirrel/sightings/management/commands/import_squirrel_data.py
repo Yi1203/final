@@ -17,11 +17,7 @@ class Command(BaseCommand):
 
         with open(path, mode='r') as csvfile:
             reader = csv.DictReader(csvfile)
-            USID = set()
             for row in reader:
-                if row.get('Unique Squirrel ID') in USID:
-                    continue
-                else:
                     obj, created = Squirrel.objects.get_or_create(
                         X = row.get('X'),
                         Y = row.get('Y'),
@@ -59,5 +55,5 @@ class Command(BaseCommand):
                         CCD = row.get('City Council Districts'),
                         PP = row.get('Police Precincts'),
                      )
-                USID.add(row.get('Unique Squirrel ID'))
+            obj.save()
         print('Done!')
