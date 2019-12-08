@@ -12,9 +12,9 @@ def map(request):
     return render(request, 'sightings/map.html',context)
 
 def list(request):
-        sightings = Squirrel.objects.all()
+        squirrels = Squirrel.objects.all()
         context = {
-                "sightings": Squirrel.objects.all()
+                "squirrels": squirrels,
         }
         return render(request,'sightings/list.html', context)
 
@@ -35,15 +35,14 @@ def add(request):
     return render(request, 'sightings/add.html', context)
 
 def edit(request, USID):
-    sightings = Squirrel.objects.get(pk=USID)
+    squirrel = Squirrel.objects.get(pk=USID)
     if request.method == 'POST':
-        form = SightingsForm(request.POST, instance=sightings)
+        form = SightingsForm(request.POST, instance=squirrel)
         if form.is_valid():
             form.save()
             return redirect(f'/sightings/')
     else:
-        form = SightingsForm(instance=sightings)
-
+        form = SightingsForm(instance=squirrel)
     context = {
             'form': form,
             'squirrel':squirrel,
