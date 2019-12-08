@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+  <title> Add Sightings </title>
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      
+      {{ form.as_p }}
+      <br>
+      <input type='submit' name='add'>
+      <br>
+      <a href='/sightings/'>Return to sightings</a>
+    </form>
+  </body>
+</html>
+

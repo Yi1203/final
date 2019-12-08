@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title> Sightings List </title>
+    </head>
+    
+    <body>
+        <h2>List of sightings</h2>
+
+	<a href="/sightings/add"><button type="button">Add</button></a>
+	<br>
+	<a href="/sightings/stats"><button type="button">Stats</button></a>
+	<br>
+	<a href="/map"><button type="button">Map</button></a>
+
+	<h3>Squirrel IDs</h3>
+	    {% if squirrels %}
+                <ul>
+                    {% for squirrel in squirrels %}
+                    <li><a href="/sightings/{{squirrel.USID}}/">Squirrel IDs:{{squirrel.USID}}</a></li>
+                    {%endfor%}
+                </ul>
+            {% else %}
+                <p>No sightings!</p>
+	    {% endif %}
