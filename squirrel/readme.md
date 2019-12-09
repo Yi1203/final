@@ -6,7 +6,7 @@
 ## Goal
 The goal for this project is to build an application for keeping track of all the known squirrels. This application includes data for each of the 3,023 sightings, including location coordinates, age, primary and secondary fur color, elevation, activities, communications, and interactions between squirrels and with humans in Central Park, New York. By using this data, this application can display the location of the squirrel sightings on an OpenStreets map and the charateristics of all squirrel sightings with links to edit each.
 ## The link to the server running our application
-    https://yf2510.appspot.com/map/
+    https://yf2510.appspot.com
 
 ## Data source for download: 
  https://data.cityofnewyork.us/api/views/vfnx-vebw/rows.csv?accessType=DOWNLOAD
