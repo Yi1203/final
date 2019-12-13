@@ -1,5 +1,5 @@
 # Squirrel in Central Park
->Project Group www, Section 2
+>Project Group 24, Section 2
 >UNI: yf2510
 ![](https://img.theculturetrip.com/1440x/wp-content/uploads/2018/06/34752989530_da5858956a_h.jpg)
 
